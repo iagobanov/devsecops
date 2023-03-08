@@ -73,8 +73,8 @@ To automate the evaluation of Amazon Inspector findings on EKS, one suggestion i
 
 -   Next, create an Amazon EventBridge rule to trigger a Lambda function when assessment findings are generated using the following commands:
 
-aws events put-rule --name <rule_name> --event-pattern '{"source": ["aws.inspector"],"detail-type": ["Inspector Assessment Run Completed"],"resources": ["<assessment_template_arn>"]}' --region <region>
-aws events put-targets --rule <rule_name> --targets '[{"arn": "<lambda_function_arn>","id": "<id>"}]' --region <region>
+`aws events put-rule --name <rule_name> --event-pattern '{"source": ["aws.inspector"],"detail-type": ["Inspector Assessment Run Completed"],"resources": ["<assessment_template_arn>"]}' --region <region>`
+`aws events put-targets --rule <rule_name> --targets '[{"arn": "<lambda_function_arn>","id": "<id>"}]' --region <region>`
 
 Next, install the CoSign controller on EKS to help validate image signatures. To install the CoSign controller, the following steps can be followed:
 
