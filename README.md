@@ -1,4 +1,5 @@
 
+
 Containerization has changed software development, deployment, management, packaging, and distributing applications. However, securing container images is critical to guard against data breaches, especially since containers rely on a complex network of dependencies that may harbor vulnerabilities. To ensure the security of container images on Amazon Elastic Kubernetes Service (EKS), the following best practices can be followed:
 
 -   Use trusted base images from reputable sources
@@ -64,7 +65,7 @@ To automate the evaluation of Amazon Inspector findings on EKS, one suggestion i
 `aws iam attach-role-policy \
 --role-name my_execution_role \
 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole \
---region us-east-1``
+--region us-east-1`
 
 -   Now, create the lambda based on the local file:
 
@@ -78,8 +79,8 @@ To automate the evaluation of Amazon Inspector findings on EKS, one suggestion i
 
 -   Next, create an Amazon EventBridge rule to trigger a Lambda function when assessment findings are generated using the following commands:
 
-aws events put-rule --name <rule_name> --event-pattern '{"source": ["aws.inspector"],"detail-type": ["Inspector Assessment Run Completed"],"resources": ["<assessment_template_arn>"]}' --region <region>
-aws events put-targets --rule <rule_name> --targets '[{"arn": "<lambda_function_arn>","id": "<id>"}]' --region <region>
+`aws events put-rule --name <rule_name> --event-pattern '{"source": ["aws.inspector"],"detail-type": ["Inspector Assessment Run Completed"],"resources": ["<assessment_template_arn>"]}' --region <region>
+aws events put-targets --rule <rule_name> --targets '[{"arn": "<lambda_function_arn>","id": "<id>"}]' --region <region>`
 
 Next, install the CoSign controller on EKS to help validate image signatures. To install the CoSign controller, the following steps can be followed:
 
