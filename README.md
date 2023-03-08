@@ -93,7 +93,7 @@ Next, install the CoSign controller on EKS to help validate image signatures. To
 
 By installing the CoSign controller on EKS, container images can be authenticated and validated before they are deployed in production environments. This helps prevent unauthorized or malicious images from being used, thereby improving the overall security of container images.
 
-![Cosign](./pictures/cosign.png)
+![Cosign](./cosign.png)
 
 The CoSign controller on Amazon EKS validates images by intercepting requests to pull container images from a registry, verifying the signature of the image, and only allowing images with valid signatures to be deployed to the cluster. This ensures that only trusted and authenticated images are used, improving the security of container images.
 
