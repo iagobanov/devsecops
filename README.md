@@ -1,4 +1,8 @@
+# About
 
+This repository provides a guide for setting up a Kubernetes cluster on AWS EKS and deploying a Cosign Controller for signing and verifying container images. It also includes instructions for integrating Amazon Inspector with the EKS cluster and using AWS Lambda functions to evaluate the resulting security insights. By following these steps, users can enhance the security of their EKS cluster and gain greater visibility into potential vulnerabilities.
+
+# Context
 Containerization has changed software development, deployment, management, packaging, and distributing applications. However, securing container images is critical to guard against data breaches, especially since containers rely on a complex network of dependencies that may harbor vulnerabilities.
 
 Since development teams frequently pulls in new code and dependencies from a variety of sources, including public repositories and community-driven codebases.
